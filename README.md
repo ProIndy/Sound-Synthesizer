@@ -3,10 +3,10 @@
 ### Prerequisites:
 
 **For Mac :**
-brew install pkgconfig raylib
+> brew install pkgconfig raylib
 
 **For Linux :**
-sudo bash compile_raylib_linux.sh
+> sudo bash compile_raylib_linux.sh
 
 
 ### To compile :
