@@ -18,7 +18,7 @@ typedef struct
     float   phase_stride;
 } Oscillator;
 
-# include "libft/includes/libft.h"
+# include "libft.h"
 # include <fcntl.h>
 # include <stdio.h>
 # include <stdlib.h>

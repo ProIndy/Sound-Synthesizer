@@ -18,7 +18,6 @@ t_notes parse_note(char *note, float tempo, int newtrack)
 	static int octave = 3;
 	static float default_duration = 1.0f;
 	float local_dur;
-	int i;
 	t_notes one_note;
 
 	if (!newtrack)
@@ -133,7 +132,6 @@ int get_tempo (char *buf)
 t_notes **make_array_of_tracks(char *filename)
 {
 	t_notes **song;
-	t_notes *track;
 	char **split_lines;
 	char **split_notes;
 	int fd;
@@ -234,6 +232,7 @@ void    update_square(float *signal, Oscillator *wave, float cur_freq)
 {
     size_t  t;
 
+	(void)cur_freq;
     t = 0;
     while (t < 1024)
     {
@@ -290,7 +289,6 @@ void	player(t_notes **song, int *tracks)
 	int			i;
 	int			j;
 	int			t;
-	int			cur_loop;
     int         loop_count;
 
 	InitWindow(screen_width, screen_height, "Synth");
@@ -309,6 +307,7 @@ void	player(t_notes **song, int *tracks)
 		wave[i].phase = 0.0f;
 		wave[i].phase_stride = song[i][0].frequency * SAMPLE_DURATION;
 		tot_dur[i] = song[i][0].duration;
+		(void)tot_dur;
 		cur_freq[i] = song[i][0].frequency;
 		cur_note[i] = 0;
 		i++;
@@ -423,7 +422,6 @@ int	main(int argc, char **argv)
 	{
 		t_notes **song;
 		int	*tracks;
-		int	i;
 
 		song = make_array_of_tracks(argv[1]);
 		tracks = get_waveform(argv[1]);
