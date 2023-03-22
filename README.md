@@ -18,7 +18,7 @@ Compile with Makefile
 
 
 ### Run the program with a songfile as argument :
-> ./minisynth <file>
+> ./minisynth (file)
 
 Sample files are found in rush_sound_synthesis_examples/
 
